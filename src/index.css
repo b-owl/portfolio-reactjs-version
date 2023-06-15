@@ -1,0 +1,35 @@
+@font-face {
+  font-family: casablanca;
+  src: url("/fonts/Casablanca.ttf") format("truetype");
+}
+@font-face {
+  font-family: soltan;
+  src: url("/fonts/Sultan\ Adan\ Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: robotoBold;
+  src: url("/fonts/Roboto-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: summer;
+  src: url("/fonts/Summer\ Dance.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

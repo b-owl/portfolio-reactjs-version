@@ -1,0 +1,15 @@
+.navanime {
+  animation: sidebar 0.4s ease-in-out forwards;
+}
+@keyframes sidebar {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+.activeNavlink .dot {
+  background: black !important;
+}

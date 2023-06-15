@@ -1,0 +1,11 @@
+.settingAnime {
+  animation: setting 0.4s ease-in-out forwards;
+}
+@keyframes setting {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}

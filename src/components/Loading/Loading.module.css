@@ -1,0 +1,38 @@
+/*! loading Animation */
+.loading > span {
+  animation: dot 0.5s alternate infinite;
+  animation-delay: calc(0.1s * var(--j));
+}
+@keyframes dot {
+  to {
+    transform: translateY(-1rem);
+  }
+}
+.finger {
+  animation: finger 0.4s linear alternate infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes finger {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-1rem);
+  }
+}
+.finger-five {
+  animation: finger5 0.4s linear alternate infinite;
+}
+.finger-five > span {
+  clip-path: polygon(33% 74%, 52% 84%, 70% 91%, 100% 100%, 0 100%, 0 48%, 17% 63%);
+}
+
+@keyframes finger5 {
+  from {
+    transform: translateY(0) rotate(8deg);
+  }
+  to {
+    transform: translateY(-1rem) rotate(-8deg);
+  }
+}

@@ -1,0 +1,17 @@
+/*! projects  */
+.project-item {
+  transition: 0.5s opacity;
+}
+.project-item .link {
+  transition: 0.5s transform;
+}
+.project-item:hover .link {
+  transform: translateX(0);
+}
+.project-item .TitleText {
+  transform: translateY(5rem);
+  transition: 0.3s transform;
+}
+.project-item:hover .TitleText {
+  transform: translateY(0);
+}
