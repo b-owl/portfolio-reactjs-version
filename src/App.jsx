@@ -39,14 +39,18 @@ const App = () => {
   }, [currentLang, currentColor, currentMode]);
 
   useEffect(() => {
+    if (
+      window.location.pathname === "/" ||
+      window.location.pathname === "" ||
+      window.location.pathname === "/portfolio"
+    ) {
+      navigate("./home");
+    }
+
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 1500);
-
-    if (window.location.pathname === "/" || window.location.pathname === "") {
-      navigate("./home");
-    }
   }, []);
 
   useEffect(() => {

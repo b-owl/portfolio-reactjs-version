@@ -4,7 +4,7 @@
 }
 @font-face {
   font-family: soltan;
-  src: url("/fonts/Sultan\ Adan\ Bold.ttf") format("truetype");
+  src: url("/fonts/Sultan.ttf") format("truetype");
 }
 @font-face {
   font-family: robotoBold;
@@ -12,7 +12,7 @@
 }
 @font-face {
   font-family: summer;
-  src: url("/fonts/Summer\ Dance.ttf") format("truetype");
+  src: url("/fonts/Summer.ttf") format("truetype");
 }
 
 * {
