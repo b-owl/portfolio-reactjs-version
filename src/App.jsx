@@ -42,7 +42,8 @@ const App = () => {
     if (
       window.location.pathname === "/" ||
       window.location.pathname === "" ||
-      window.location.pathname === "/portfolio"
+      window.location.pathname === "/portfolio" ||
+      window.location.pathname === "/portfolio/"
     ) {
       navigate("./home");
     }
