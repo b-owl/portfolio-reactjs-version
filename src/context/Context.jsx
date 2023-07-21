@@ -17,7 +17,7 @@ export const ContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [settings, setSettings] = useState(false);
   const [currentColor, setCurrentColor] = useState("#F55050");
-  const [currentMode, setCurrentMode] = useState("light");
+  const [currentMode, setCurrentMode] = useState("dark");
   const [currentLang, setCurrentLang] = useState("en");
   const { t, i18n } = useTranslation();
 
@@ -178,6 +178,13 @@ export const ContextProvider = ({ children }) => {
     {
       all: [
         {
+          title: t("reactjs"),
+          projectName: t("projectName0"),
+          pic: "bg-DigitalRepair",
+          githubLink: "https://github.com/Mehdi0-0Keramati/RepairDigitalFactory",
+          viewOnline: "https://mehdi0-0keramati.github.io/RepairDigitalFactory/",
+        },
+        {
           title: t("app"),
           projectName: t("projectName1"),
           pic: "bg-dashboard",
@@ -212,6 +219,7 @@ export const ContextProvider = ({ children }) => {
           githubLink: "https://github.com/Mehdi0-0Keramati/crypto-currency",
           viewOnline: "https://mehdi0-0keramati.github.io/crypto-currency",
         },
+
         {
           title: t("reactjs"),
           projectName: t("projectName6"),
@@ -342,6 +350,13 @@ export const ContextProvider = ({ children }) => {
       templates: [
         {
           react: [
+            {
+              title: t("reactjs"),
+              projectName: t("projectName0"),
+              pic: "bg-DigitalRepair",
+              githubLink: "https://github.com/Mehdi0-0Keramati/RepairDigitalFactory",
+              viewOnline: "https://mehdi0-0keramati.github.io/RepairDigitalFactory/",
+            },
             {
               title: t("reactjs"),
               projectName: t("projectName6"),

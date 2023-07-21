@@ -8,6 +8,8 @@ module.exports = {
     extend: {
       fontFamily: {
         casablanca: ["casablanca", "serif"],
+        TitrPlus: ["titrplus", "serif"],
+        BYekan: ["BYekan", "serif"],
         soltan: ["soltan", "serif"],
         robotoBold: ["robotoBold", "serif"],
         summer: ["summer", "serif"],
@@ -45,6 +47,7 @@ module.exports = {
       },
       backgroundImage: {
         pic: "url('./assets/images/kid.jpg')",
+        DigitalRepair: "url('./assets/images/DigitalRepair.png')",
         musicPlayer: "url('./assets/images/musicplayer.png')",
         dashboard: "url('./assets/images/dashboard.png')",
         weatherforecast: "url('./assets/images/weatherforecast.png')",

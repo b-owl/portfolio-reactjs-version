@@ -1,18 +1,26 @@
 @font-face {
   font-family: casablanca;
-  src: url("/fonts/Casablanca.ttf") format("truetype");
+  src: url("./assets/fonts/Casablanca.ttf") format("truetype");
+}
+@font-face {
+  font-family: TitrPlus;
+  src: url("./assets/fonts/TitrPlus.ttf") format("truetype");
+}
+@font-face {
+  font-family: BYekan;
+  src: url("./assets/fonts/BYekan.ttf") format("truetype");
 }
 @font-face {
   font-family: soltan;
-  src: url("/fonts/Sultan.ttf") format("truetype");
+  src: url("./assets/fonts/Sultan.ttf") format("truetype");
 }
 @font-face {
   font-family: robotoBold;
-  src: url("/fonts/Roboto-Bold.ttf") format("truetype");
+  src: url("assets/fonts/Roboto-Bold.ttf") format("truetype");
 }
 @font-face {
   font-family: summer;
-  src: url("/fonts/Summer.ttf") format("truetype");
+  src: url("assets/fonts/Summer.ttf") format("truetype");
 }
 
 * {
@@ -28,6 +36,7 @@ body {
   font-family: "Open Sans", sans-serif;
   overflow-x: hidden;
   user-select: none;
+  user-zoom: fixed;
 }
 
 @tailwind base;

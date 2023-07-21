@@ -69,7 +69,7 @@ const App = () => {
   }, [document.title]);
 
   return (
-    <div
+    <section
       className={`${
         currentMode === "dark" ? "dark" : ""
       } rtl:font-soltan font-robotoBold `}
@@ -90,16 +90,14 @@ const App = () => {
           <>
             <Navbar />
             <Sidebar />
-            <div className="">
-              <Settings />
-            </div>
+            <Settings />
             <ShortcutPages />
             <GetinTouch />
             <Outlet />
           </>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

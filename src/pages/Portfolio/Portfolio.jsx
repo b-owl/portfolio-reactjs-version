@@ -48,7 +48,7 @@ const Project = () => {
           <>
             <div style={{ animationDelay: "1s" }}>
               <div className="relative mb-10">
-                <h3 className="absolute z-10 text-xl -translate-x-1/2 left-1/2">
+                <h3 className="rtl:font-TitrPlus absolute z-10 text-xl -translate-x-1/2 left-1/2">
                   {t("projects")}
                 </h3>
                 <span
@@ -57,7 +57,7 @@ const Project = () => {
                 ></span>
               </div>
 
-              <h1 className="my-5 text-2xl text-center md:text-4xl font-casablanca ltr:font-summer">
+              <h1 className="my-5 text-2xl text-center md:text-4xl rlt:font-casablanca ltr:font-summer">
                 {t("seeProjects")}
               </h1>
               <div
@@ -127,27 +127,26 @@ const Project = () => {
                     className={`${pic} bg-center bg-contain bg-no-repeat w-3/4 md:w-full h-64 `}
                   >
                     <div
-                      className={`${Styles["project-item"]} flex flex-col items-center justify-center w-full h-full gap-4 overflow-hidden opacity-0  hover:opacity-100 dark:bg-slate-800/75 bg-slate-200/75`}
+                      className={`${Styles["project-item"]} flex flex-col items-center justify-center w-full h-full gap-4 overflow-hidden opacity-0 hover:opacity-100 dark:bg-slate-800/75 bg-slate-200/75`}
                     >
                       <span
-                        className={`${Styles.TitleText} text-sm ltr:font-summer`}
+                        className={`${Styles.TitleText} text-sm ltr:font-summer rtl:font-TitrPlus`}
                       >
                         {title}
                       </span>
-
                       <h3
-                        style={{ WebkitTextStroke: `.4px ${currentColor}` }}
-                        className="-mt-3 text-xl font-semibold"
+                        style={{ WebkitTextStroke: `.9px ${currentColor}` }}
+                        className="-mt-3 text-xl font-semibold rtl:font-soltan ltr:font-robotoBold"
                       >
                         {projectName}
                       </h3>
 
-                      <div className="flex gap-4 cursor-pointer">
+                      <div className="flex gap-4 cursor-pointer rtl:font-casablanca">
                         <a
                           target="_blank"
                           rel="noreferrer"
                           style={{ background: currentColor }}
-                          className={`${Styles.link} px-2 py-1 text-sm -translate-x-24 rounded-lg shadow-md`}
+                          className={`${Styles.link} px-2 py-1 text-sm -translate-x-24 rounded-lg shadow-md hover:border-1`}
                           href={githubLink}
                           type="button"
                         >
@@ -157,7 +156,7 @@ const Project = () => {
                           target="_blank"
                           rel="noreferrer"
                           style={{ background: currentColor }}
-                          className="px-2 py-1 text-sm translate-x-24 rounded-lg shadow-md link"
+                          className={`${Styles.link} px-2 py-1 text-sm translate-x-24 rounded-lg shadow-md hover:border-1`}
                           href={viewOnline}
                           type="button"
                         >
@@ -178,22 +177,24 @@ const Project = () => {
                 <div
                   className={`${Styles["project-item"]} flex flex-col items-center justify-center w-full h-full gap-4 overflow-hidden opacity-0 hover:opacity-100 dark:bg-slate-800/75 bg-slate-200/75`}
                 >
-                  <span className={`${Styles.TitleText} text-sm ltr:font-summer`}>
+                  <span
+                    className={`${Styles.TitleText} text-sm ltr:font-summer rtl:font-TitrPlus`}
+                  >
                     {title}
                   </span>
                   <h3
-                    style={{ WebkitTextStroke: `.4px ${currentColor}` }}
-                    className="-mt-3 text-xl font-semibold"
+                    style={{ WebkitTextStroke: `.9px ${currentColor}` }}
+                    className="-mt-3 text-xl font-semibold rtl:font-soltan ltr:font-robotoBold"
                   >
                     {projectName}
                   </h3>
 
-                  <div className="flex gap-4 cursor-pointer">
+                  <div className="flex gap-4 cursor-pointer rtl:font-casablanca">
                     <a
                       target="_blank"
                       rel="noreferrer"
                       style={{ background: currentColor }}
-                      className={`${Styles.link} px-2 py-1 text-sm -translate-x-24 rounded-lg shadow-md`}
+                      className={`${Styles.link} px-2 py-1 text-sm -translate-x-24 rounded-lg shadow-md hover:border-1`}
                       href={githubLink}
                       type="button"
                     >
@@ -203,7 +204,7 @@ const Project = () => {
                       target="_blank"
                       rel="noreferrer"
                       style={{ background: currentColor }}
-                      className={`${Styles.link} px-2 py-1 text-sm translate-x-24 rounded-lg shadow-md`}
+                      className={`${Styles.link} px-2 py-1 text-sm translate-x-24 rounded-lg shadow-md hover:border-1`}
                       href={viewOnline}
                       type="button"
                     >

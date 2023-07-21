@@ -15,7 +15,7 @@ const About = () => {
       </div>
       <div className="basis-full lg:basis-2/3">
         <div className="relative">
-          <h2 className="absolute z-10 text-xl rtl:font-casablanca ltr:font-summer">
+          <h2 className="absolute z-10 text-xl rtl:font-TitrPlus ltr:font-summer">
             {t("about")}
           </h2>
           <span
@@ -35,7 +35,7 @@ const About = () => {
 
         <div className="grid gap-8 mt-12 md:grid-cols-2 gap-y-12">
           {aboutData.map(({ skill, description, icon }) => (
-            <div key={skill} className="flex items-center gap-8 md:justify-between">
+            <div key={skill} className="flex items-center gap-8 md:justify-between ">
               <div className="relative">
                 <h2 className="absolute z-10 text-xl font-semibold -left-2 -top-1">
                   {icon}
@@ -47,7 +47,7 @@ const About = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-casablanca ltr:font-summer">{skill}</h3>
+                <h3 className="text-lg font-TitrPlus ltr:font-summer">{skill}</h3>
                 <p className="mt-2 text-xs text-gray-400">{description}</p>
               </div>
             </div>

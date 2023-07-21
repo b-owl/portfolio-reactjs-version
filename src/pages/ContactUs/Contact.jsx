@@ -47,7 +47,7 @@ const Contact = () => {
 
       <div className="basis-full lg:basis-2/3">
         <div className="relative">
-          <h2 className="absolute z-10 text-xl rtl:font-semibold font-casablanca ltr:font-summer">
+          <h2 className="absolute z-10 text-xl rtl:font-semibold rtl:font-TitrPlus ltr:font-summer">
             {t("contact")}
           </h2>
           <span
@@ -56,7 +56,7 @@ const Contact = () => {
           ></span>
         </div>
 
-        <h1 className="mt-10 mb-5 text-4xl font-semibold font-casablanca ">
+        <h1 className="mt-10 mb-5 text-4xl font-semibold ltr:font-robotoBold rtl:font-casablanca ">
           {t("getInTouch")}
         </h1>
         <div

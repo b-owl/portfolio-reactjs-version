@@ -18,13 +18,19 @@ const Sidebar = () => {
       >
         <RiMenu3Line />
       </button>
-      <div className={`${activeMenu ? "flex" : "hidden"} fixed z-20 h-full w-full`}>
+      <div
+        className={`${
+          activeMenu ? "visible" : "invisible"
+        }  fixed z-20 h-full w-full`}
+      >
         <div
           onClick={() => setActiveMenu(false)}
-          className="z-0 w-full h-full text-gray-200 overlay bg-half-transparent-light dark:bg-half-transparent-dark dark:text-gray-800 "
+          className="absolute top-0 left-0 z-0 w-full h-full text-gray-200 overlay bg-half-transparent-light dark:bg-half-transparent-dark dark:text-gray-800 "
         ></div>
         <nav
-          className={`${Styles.navanime} fixed h-full navanime w-96`}
+          className={`${
+            activeMenu ? "-translate-x-0" : "-translate-x-full"
+          } transition-all fixed left-0 h-full w-96`}
           style={{ background: currentColor }}
         >
           <ul className="flex flex-col justify-between w-full h-full px-5 py-10 direction">
@@ -44,7 +50,7 @@ const Sidebar = () => {
                     setActiveMenu(false);
                   }}
                   className={({ isActive }) =>
-                    isActive ? Styles.activeNavlink : ""
+                    isActive ? Styles.activeNavLink : ""
                   }
                   style={({ isActive }) => ({ color: isActive ? "black" : "" })}
                   to={href}

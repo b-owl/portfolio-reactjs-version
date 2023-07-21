@@ -4,8 +4,6 @@ import { CiSettings } from "react-icons/ci";
 
 import { useStateContext } from "../../context/Context";
 
-import Styles from "./Setting.module.css";
-
 const Settings = () => {
   const {
     settings,
@@ -30,13 +28,19 @@ const Settings = () => {
       >
         <CiSettings />
       </button>
-      <div className={`${settings ? "flex" : "hidden"} fixed z-30 h-full w-full `}>
+
+      <section
+        className={`${settings ? "visible" : "invisible"} fixed z-30 h-full w-full `}
+      >
         <div
           onClick={() => setSettings(false)}
-          className="z-0 w-full h-full overlay bg-half-transparent-dark"
+          className="absolute top-0 left-0 -z-10 w-full h-full overlay bg-half-transparent-dark"
         ></div>
+
         <div
-          className={`${Styles.settingAnime} fixed h-full p-5 bg-white w-96 dark:bg-secondary-dark-bg dark:text-white`}
+          className={`${
+            settings ? "translate-x-0" : "translate-x-full"
+          } transition-all fixed right-0 h-full p-5 bg-white w-96 dark:bg-secondary-dark-bg dark:text-white`}
         >
           <div className="flex justify-between w-full py-3 text-xl font-semibold">
             <h3>{t("settings")}</h3>
@@ -122,7 +126,7 @@ const Settings = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

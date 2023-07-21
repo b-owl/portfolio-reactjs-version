@@ -14,7 +14,7 @@ const Service = () => {
     <div className="activeSection w-screen min-h-screen mx-auto md:w-4/5 flex flex-col pt-10">
       <div>
         <div className="relative mb-10">
-          <h3 className="text-xl absolute left-1/2 -translate-x-1/2 z-10 ">
+          <h3 className="text-xl absolute left-1/2 -translate-x-1/2 z-10 rtl:font-TitrPlus">
             {t("skills")}
           </h3>
           <span
@@ -23,7 +23,7 @@ const Service = () => {
           ></span>
         </div>
 
-        <h1 className="text-2xl md:text-4xl my-5 text-center font-casablanca ltr:font-summer">
+        <h1 className="text-2xl md:text-4xl my-5 text-center rlt:font-casablanca ltr:font-summer">
           {t("seeSkills")}
         </h1>
         <div
@@ -69,7 +69,7 @@ const Service = () => {
       >
         {serviceData.map(({ icon, skill, description }) => (
           <SwiperSlide key={skill}>
-            <div className="item border-black dark:border-white border-2 p-4 w-10/12 md:w-60 h-4/5 flex flex-col gap-y-4">
+            <div className="item border-black dark:border-white border-2 p-3 w-10/12 md:w-60 h-4/5 flex flex-col gap-y-4">
               <style>
                 {`.item:hover {
                   background: ${currentColor} !important;}`}
@@ -92,14 +92,14 @@ const Service = () => {
                   }`}
               </style>
 
-              <h2 className="text-xl font-semibold">{icon}</h2>
+              <h2 className="text-xl">{icon}</h2>
               <h3 className="text-xl font-summer">{skill}</h3>
               <p
                 style={{
                   direction:
                     localStorage.getItem("currentLang") === "fa" ? "rtl" : "ltr",
                 }}
-                className="description text-sm text-gray-400 rtl:text-right"
+                className="description text-sm text-gray-400"
               >
                 {description}
               </p>

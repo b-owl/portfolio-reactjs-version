@@ -73,7 +73,7 @@ const Home = () => {
 
         <div
           className={`
-            ${Styles.me}  absolute hidden w-96 h-96 top-28 ltr:right-32 rtl:left-32
+            ${Styles.me} w-2/5 absolute hidden lg:bottom-10 ltr:right-32 rtl:left-32
             `}
         >
           <img src={MePic} alt="me" />
