@@ -25,7 +25,7 @@ const App = () => {
     const lang = localStorage.getItem("currentLang");
 
     if (theme || lang || color) {
-      setCurrentMode(theme || "light");
+      setCurrentMode(theme || "dark");
       setCurrentColor(color || "#F55050");
       setCurrentLang(lang || "en");
       i18n.changeLanguage(lang);

@@ -6,6 +6,7 @@ import "react-simple-typewriter/dist/index";
 
 import { MePic } from "../../assets/dummy";
 import Styles from "./Home.module.css";
+import CVfile from "../../assets/cv.pdf";
 
 const Home = () => {
   const { currentColor, currentLang, t } = useStateContext();
@@ -66,9 +67,11 @@ const Home = () => {
               className={`${Styles["clip-path"]} absolute top-0 left-0 z-0 w-full h-full`}
             ></span>
           </button>
-          <button type="button" className="w-32 px-4 py-6 md:w-36">
-            {t("readMore")}
-          </button>
+          <a href={CVfile} download="cv.pdf">
+            <button type="button" className="w-32 px-4 py-6 md:w-36">
+              {t("readMore")}
+            </button>
+          </a>
         </div>
 
         <div
