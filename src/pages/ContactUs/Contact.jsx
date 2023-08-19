@@ -1,38 +1,39 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useStateContext } from "../../context/Context";
 
 import { ContactPic } from "../../assets/dummy";
-import Styles from "./ContactUs.module.css";
+import "./ContactUs.css";
 
 const Contact = () => {
   const { currentColor, t } = useStateContext();
+  const [AlertClassname, setAlertClassname] = useState("");
+  const [LoadingClassname, setLoadingClassname] = useState("");
+
   const form = useRef();
-  const alr = useRef();
-  const loading = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
-    loading.current.classList.add("active");
+    setLoadingClassname("activeLoading");
 
     emailjs
       .sendForm(
-        "service_48lj0ke",
-        "template_d6m0fne",
+        "service_13d7qmo",
+        "template_gluyl7m",
         form.current,
         "srOSEOrJ89xFliQby"
       )
       .then(
         (result) => {
           console.log(result.text);
-          alr.current.classList.add("active");
-          loading.current.classList.remove("active");
+          setAlertClassname("activeAlert");
+          setLoadingClassname("");
         },
         (error) => {
           console.log(error.text);
         }
       );
-    alr.current.classList.remove("active");
+    setAlertClassname("");
   };
 
   return (
@@ -70,8 +71,7 @@ const Contact = () => {
             background: currentColor,
             left: localStorage.getItem("currentLang") === "fa" ? "2rem" : "80%",
           }}
-          ref={alr}
-          className={`${Styles.alert} text-md rtl:font-soltan rtl:font-semibold`}
+          className={`${AlertClassname} alert text-md rtl:font-soltan rtl:font-semibold`}
         >
           {t("messageSended")}
           <span></span>
@@ -129,10 +129,9 @@ const Contact = () => {
           </div>
 
           <input
-            ref={loading}
             type="submit"
             style={{ background: currentColor }}
-            className={`${Styles.loading} px-6 py-3 mt-4 mb-16 font-semibold cursor-pointer hover:shadow-md dark:shadow-white/25 shadow-black`}
+            className={`${LoadingClassname} loading px-6 py-3 mt-4 mb-16 font-semibold cursor-pointer hover:shadow-md dark:shadow-white/25 shadow-black`}
             value={t("sendMessage")}
           />
         </form>

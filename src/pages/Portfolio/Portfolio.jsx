@@ -1,9 +1,13 @@
+import { lazy, Suspense } from "react";
 import { useStateContext } from "../../context/Context";
 import { useEffect, useState } from "react";
 
-import Styles from "./Portfolio.module.css";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
-const Project = () => {
+const Project = lazy(() => import("./Project"));
+
+const Portfolio = () => {
   const { currentColor, currentLang, portfolioTitle, portfolioData, t } =
     useStateContext();
   const [delay, setdelay] = useState(false);
@@ -12,7 +16,13 @@ const Project = () => {
   const [templateGern, setTemplateGern] = useState("ReactJS");
   const [activeTabTemplate, setActiveTabTemplate] = useState([true, false]);
   const [gern, setGern] = useState("All");
-  const [activeTab, setActiveTab] = useState([true, false, false, false, false]);
+  const [activeTab, setActiveTab] = useState([
+    true,
+    false,
+    false,
+    false,
+    false,
+  ]);
 
   useEffect(() => {
     if (gern === "All" || gern === "همه") {
@@ -82,7 +92,9 @@ const Project = () => {
                   style={{ background: activeTab[idx] ? currentColor : "" }}
                   className="p-2 py-1 mb-10 font-semibold text-gray-800 dark:text-gray-100 md:p-4 md:py-2 rounded-2xl"
                   onClick={() =>
-                    setActiveTab(activetab) || setGern(name) || name === "templates"
+                    setActiveTab(activetab) ||
+                    setGern(name) ||
+                    name === "templates"
                       ? setTemplate(true)
                       : setTemplate(false)
                   }
@@ -100,17 +112,22 @@ const Project = () => {
               <div className="col-span-1 m-5 -mt-5 text-xs text-center sm:col-span-2 md:col-span-3 lg:col-span-4 md:text-md">
                 <button
                   className="p-2 py-1 md:p-4 md:py-2 rounded-2xl"
-                  style={{ background: activeTabTemplate[0] ? currentColor : "" }}
+                  style={{
+                    background: activeTabTemplate[0] ? currentColor : "",
+                  }}
                   type="button"
                   onClick={() =>
-                    setTemplateGern("ReactJS") || setActiveTabTemplate([true, false])
+                    setTemplateGern("ReactJS") ||
+                    setActiveTabTemplate([true, false])
                   }
                 >
                   {t("reactjs")}
                 </button>
                 <button
                   className="p-2 py-1 md:p-4 md:py-2 rounded-2xl"
-                  style={{ background: activeTabTemplate[1] ? currentColor : "" }}
+                  style={{
+                    background: activeTabTemplate[1] ? currentColor : "",
+                  }}
                   type="button"
                   onClick={() =>
                     setTemplateGern("VanillaJS") ||
@@ -122,98 +139,36 @@ const Project = () => {
               </div>
               {work?.map(
                 ({ pic, title, projectName, githubLink, viewOnline }, idx) => (
-                  <div
+                  <Project
                     key={idx}
-                    className={`${pic} bg-center bg-contain bg-no-repeat w-3/4 md:w-full h-64 `}
-                  >
-                    <div
-                      className={`${Styles["project-item"]} flex flex-col items-center justify-center w-full h-full gap-4 overflow-hidden opacity-0 hover:opacity-100 dark:bg-slate-800/75 bg-slate-200/75`}
-                    >
-                      <span
-                        className={`${Styles.TitleText} text-sm ltr:font-summer rtl:font-TitrPlus`}
-                      >
-                        {title}
-                      </span>
-                      <h3
-                        style={{ WebkitTextStroke: `.9px ${currentColor}` }}
-                        className="-mt-3 text-xl font-semibold rtl:font-soltan ltr:font-robotoBold"
-                      >
-                        {projectName}
-                      </h3>
-
-                      <div className="flex gap-4 cursor-pointer rtl:font-casablanca">
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          style={{ background: currentColor }}
-                          className={`${Styles.link} px-2 py-1 text-sm -translate-x-24 rounded-lg shadow-md hover:border-1`}
-                          href={githubLink}
-                          type="button"
-                        >
-                          {t("viewGithub")}
-                        </a>
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          style={{ background: currentColor }}
-                          className={`${Styles.link} px-2 py-1 text-sm translate-x-24 rounded-lg shadow-md hover:border-1`}
-                          href={viewOnline}
-                          type="button"
-                        >
-                          {t("liveDemo")}
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                    pic={pic}
+                    title={title}
+                    projectName={projectName}
+                    githubLink={githubLink}
+                    viewOnline={viewOnline}
+                  />
                 )
               )}
             </>
           ) : (
-            work?.map(({ pic, title, projectName, githubLink, viewOnline }, idx) => (
-              <div
-                key={idx}
-                className={`${pic} bg-center bg-contain bg-no-repeat w-3/4 md:w-full h-64 `}
-              >
-                <div
-                  className={`${Styles["project-item"]} flex flex-col items-center justify-center w-full h-full gap-4 overflow-hidden opacity-0 hover:opacity-100 dark:bg-slate-800/75 bg-slate-200/75`}
-                >
-                  <span
-                    className={`${Styles.TitleText} text-sm ltr:font-summer rtl:font-TitrPlus`}
+            work?.map(
+              ({ pic, title, projectName, githubLink, viewOnline }, idx) => (
+                <>
+                  <Suspense
+                    fallback={<Skeleton className="w-3/4 md:w-full h-64" />}
                   >
-                    {title}
-                  </span>
-                  <h3
-                    style={{ WebkitTextStroke: `.9px ${currentColor}` }}
-                    className="-mt-3 text-xl font-semibold rtl:font-soltan ltr:font-robotoBold"
-                  >
-                    {projectName}
-                  </h3>
-
-                  <div className="flex gap-4 cursor-pointer rtl:font-casablanca">
-                    <a
-                      target="_blank"
-                      rel="noreferrer"
-                      style={{ background: currentColor }}
-                      className={`${Styles.link} px-2 py-1 text-sm -translate-x-24 rounded-lg shadow-md hover:border-1`}
-                      href={githubLink}
-                      type="button"
-                    >
-                      {t("viewGithub")}
-                    </a>
-                    <a
-                      target="_blank"
-                      rel="noreferrer"
-                      style={{ background: currentColor }}
-                      className={`${Styles.link} px-2 py-1 text-sm translate-x-24 rounded-lg shadow-md hover:border-1`}
-                      href={viewOnline}
-                      type="button"
-                    >
-                      {t("liveDemo")}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))
+                    <Project
+                      key={idx}
+                      pic={pic}
+                      title={title}
+                      projectName={projectName}
+                      githubLink={githubLink}
+                      viewOnline={viewOnline}
+                    />
+                  </Suspense>
+                </>
+              )
+            )
           )}
         </div>
       </div>
@@ -221,4 +176,4 @@ const Project = () => {
   );
 };
 
-export default Project;
+export default Portfolio;
